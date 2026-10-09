@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(150deg, #405241 0%, #1d3022 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.hunin {
+    font-family: "Bpmf Huninn", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.2em;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 1em;
+}
