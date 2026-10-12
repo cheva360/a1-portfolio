@@ -24,6 +24,8 @@ EMAIL: sebasam3@uci.edu
     <title>Portfolio</title>
 </head>
 <body>
+
+    <!--socials with interactivity-->
     <div>
         <span class="socials">
             <span id="copy-email" role="button" tabindex="0" style="cursor: pointer;" title="Click to copy">sebastianmagana360@gmail.com</span>
@@ -36,12 +38,13 @@ EMAIL: sebasam3@uci.edu
 
     </div>
 
+    <!--header section-->
     <div>
         <header>
             <h1 class="title center hunin">
-                <span>
+                <strong>
                     Sebastian Magana
-                </span>
+                </strong>
             </h1>
             <h5 class="center hunin">SFX Artist & Sound Designer</h5>
             <h3 class="center hunin mywork">My Work</h3>
@@ -49,26 +52,56 @@ EMAIL: sebasam3@uci.edu
         
     </div>
     
-    <!-- list of projects with an image attached, title shown when hovered, and description -->
-    <div class="container center">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 images">
-                <img src="images/RoachGame.png" alt="Roach Game" class="img-fluid">
-            </div>
-            <div class="col-md-6 col-sm-12 images">
-                <img src="images/InsectariumMain.png" alt="Insectarium" class="img-fluid">
-            </div>
+    <!-- list of projects w/ title on hover and video + description on click -->
 
-            <div class="col-md-6 col-sm-12 images">
-                <img src="images/AVACropped.png" alt="AI Vs. Artists" class="img-fluid">
-            </div>
+    <section>
+        <div class="container center">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 images" data-title="Roach Game"
+                     data-embed="https://drive.google.com/file"
+                     data-description="Description of Roach Game.">
+                    <img src="images/RoachGame.png" alt="Roach Game" class="img-fluid">
+                </div>
+                <div class="col-md-6 col-sm-12 images" data-title="Insectarium"
+                     data-embed="https://drive.google.com/file/d/1hXo-idCTX9lXMLNzYvqc_IcTM3MdwTNQ/preview"
+                     data-description="For Insectarium I was responsible for all the sound design and the soundtrack, as well as implementing the sounds. The sound effects were a mix of my own recordings, synthesized UI sounds, and 3 vocal synthesized and distorted dialogues.">
+                    <img src="images/InsectariumMain.png" alt="Insectarium" class="img-fluid">
+                </div>
 
-            <div class="col-md-6 col-sm-12 images">
-                <img src="images/FlameBound.png" alt="FlameBound" class="img-fluid">
+                <div class="col-md-6 col-sm-12 images" data-title="AI Vs. Artists"
+                     data-embed="https://drive.google.com/file"
+                     data-description="Description of AI Vs. Artists.">
+                    <img src="images/AVACropped.png" alt="AI Vs. Artists" class="img-fluid">
+                </div>
+
+                <div class="col-md-6 col-sm-12 images" data-title="FlameBound"
+                     data-embed="https://drive.google.com/file"
+                     data-description="Description of FlameBound.">
+                    <img src="images/FlameBound.png" alt="FlameBound" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- project modal -->
+    <div id="project-modal" class="project-modal" aria-hidden="true">
+        <div class="project-modal-content" role="dialog" aria-modal="true">
+            <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+            <div class="modal-video">
+                <iframe id="modal-embed"
+                        style="width:100%; aspect-ratio:16/9; border:0;"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen
+                        title="Project video"></iframe>
+            </div>
+            <div class="modal-info">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
             </div>
         </div>
     </div>
-
+    <!--copy email script-->
     <script>
     const emailEl = document.getElementById("copy-email");
     const email = emailEl.textContent.trim();
@@ -80,6 +113,35 @@ EMAIL: sebasam3@uci.edu
         });
     }
     emailEl.addEventListener("click", copyEmail);
+    </script>
+
+    <!--modal script-->
+    <script>
+    const modal = document.getElementById("project-modal");
+    const modalEmbed = document.getElementById("modal-embed");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-description");
+
+    function openModal(item) {
+        modalTitle.textContent = item.dataset.title;
+        modalDesc.textContent = item.dataset.description;
+        modalEmbed.src = item.dataset.embed;
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        modalEmbed.removeAttribute("src"); // stops playback
+    }
+
+    document.querySelectorAll(".images").forEach(item => {
+        item.addEventListener("click", () => openModal(item));
+    });
+    document.getElementById("modal-close").addEventListener("click", closeModal);
+    modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
     </script>
 </body>
 </html>
