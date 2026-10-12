@@ -25,20 +25,61 @@ EMAIL: sebasam3@uci.edu
 </head>
 <body>
     <div>
+        <span class="socials">
+            <span id="copy-email" role="button" tabindex="0" style="cursor: pointer;" title="Click to copy">sebastianmagana360@gmail.com</span>
+            <span>&nbsp;-&nbsp;</span>
+            <a href="https://cheva360.itch.io">Itch</a>
+            &nbsp;-&nbsp;
+            <a href="https://www.linkedin.com/in/sebastian-magana-470889362">LinkedIn</a>
+            &nbsp;
+        </span>
 
     </div>
 
     <div>
-        <h1 class="center hunin">
-            <span>
-                Sebastian&nbsp;Magana
-            </span>
-        </h1>
-        <h5 class="center hunin">Sound Designer</h5>
-        <br />
-        <br />
-        <br />
-        <h3 class="center hunin">My Work</h3>
+        <header>
+            <h1 class="title center hunin">
+                <span>
+                    Sebastian Magana
+                </span>
+            </h1>
+            <h5 class="center hunin">SFX Artist & Sound Designer</h5>
+            <h3 class="center hunin mywork">My Work</h3>
+        </header>
+        
     </div>
+    
+    <!-- list of projects with an image attached, title shown when hovered, and description -->
+    <div class="container center">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 images">
+                <img src="images/RoachGame.png" alt="Roach Game" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-sm-12 images">
+                <img src="images/InsectariumMain.png" alt="Insectarium" class="img-fluid">
+            </div>
+
+            <div class="col-md-6 col-sm-12 images">
+                <img src="images/AVACropped.png" alt="AI Vs. Artists" class="img-fluid">
+            </div>
+
+            <div class="col-md-6 col-sm-12 images">
+                <img src="images/FlameBound.png" alt="FlameBound" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <script>
+    const emailEl = document.getElementById("copy-email");
+    const email = emailEl.textContent.trim();
+
+    function copyEmail() {
+        navigator.clipboard.writeText(email).then(() => {
+            emailEl.textContent = "Copied!";
+            setTimeout(() => emailEl.textContent = email, 1500);
+        });
+    }
+    emailEl.addEventListener("click", copyEmail);
+    </script>
 </body>
 </html>
