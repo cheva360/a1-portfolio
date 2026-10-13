@@ -48,6 +48,10 @@ body::before {
     margin-top: 1em;
 }
 
+.subtitle {
+    font-size: 1.5em;
+}
+
 h1 {
     font-size: 3.5em;
 }
@@ -74,7 +78,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: max-content;
-    max-width: 90%;
+    max-width: 100%;
     text-align: center;
     color: white;
     font-family: "Bpmf Huninn", sans-serif;
@@ -97,6 +101,7 @@ h1 {
 }
 
 .mywork {
+    font-size: 2em;
     padding-top: 1em;
 }
 
@@ -148,6 +153,11 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
+
+.modal-info p {
+    white-space: pre-line;
+}
+
 .modal-close {
     position: absolute;
     top: 0.25rem;
@@ -160,12 +170,22 @@ h1 {
     color: white;
 }
 
+#modal-description a {
+    color: lightblue;
+}
+
+#modal-description a:hover {
+    color: #cfeeff;
+}
+
 
 @media (max-width: 767.98px) {
     .images::after {
         position: static;
         transform: none;
         display: block;
+        width: auto;
+        text-align: center;
         margin-top: 0.5em;
         font-size: 2em;
         opacity: 1;

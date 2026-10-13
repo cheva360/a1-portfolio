@@ -46,8 +46,8 @@ EMAIL: sebasam3@uci.edu
                     Sebastian Magana
                 </strong>
             </h1>
-            <h5 class="center hunin">SFX Artist & Sound Designer</h5>
-            <h3 class="center hunin mywork">My Work</h3>
+            <p class="center hunin subtitle">Foley Artist & Sound Designer</p>
+            <p class="center hunin mywork">My Work</p>
         </header>
         
     </div>
@@ -59,12 +59,12 @@ EMAIL: sebasam3@uci.edu
             <div class="row">
                 <div class="col-md-6 col-sm-12 images" data-title="Roach Game"
                      data-embed="https://drive.google.com/file"
-                     data-description="Description of Roach Game.">
+                     data-description="Worked in collaboration with my Professor &lt;a href=&quot;https://www.linkedin.com/in/lindenreid/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Travis Linden Reid&lt;/a&gt;. Mix of foley recordings for gameplay sound effects, synthesized sounds for typewriter dialogue, and 18 unique distorted speech synthesized and subtitled lines for the main villain. &#10;&#10;My Roles&#10;- Foley Artist&#10;- Sound Designer&#10;- Sound Engineer">
                     <img src="images/RoachGame.png" alt="Roach Game" class="img-fluid">
                 </div>
                 <div class="col-md-6 col-sm-12 images" data-title="Insectarium"
                      data-embed="https://drive.google.com/file/d/1hXo-idCTX9lXMLNzYvqc_IcTM3MdwTNQ/preview"
-                     data-description="For Insectarium I was responsible for all the sound design and the soundtrack, as well as implementing the sounds. The sound effects were a mix of my own recordings, synthesized UI sounds, and 3 vocal synthesized and distorted dialogues.">
+                     data-description="For Insectarium I was responsible for all the sound design and the soundtrack, as well as implementing the sounds. The sound effects were a mix of my own recordings, synthesized UI sounds, and 3 speech synthesized and distorted dialogues.&#10;&#10;My Roles&#10;- Foley Artist&#10;- Sound Designer&#10;- Sound Engineer&#10;- Music Producer&#10;- Programmer">
                     <img src="images/InsectariumMain.png" alt="Insectarium" class="img-fluid">
                 </div>
 
@@ -98,6 +98,7 @@ EMAIL: sebasam3@uci.edu
             <div class="modal-info">
                 <h2 id="modal-title"></h2>
                 <p id="modal-description"></p>
+                <p>DEMO REELS ARE WIP</p>
             </div>
         </div>
     </div>
@@ -110,12 +111,21 @@ EMAIL: sebasam3@uci.edu
         navigator.clipboard.writeText(email).then(() => {
             emailEl.textContent = "Copied!";
             setTimeout(() => emailEl.textContent = email, 1500);
+
         });
+        // needs to be able to copy with enter for accessibility
+
     }
     emailEl.addEventListener("click", copyEmail);
+    emailEl.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {    
+            copyEmail();
+        }
+    });
     </script>
 
     <!--modal script-->
+    <!--modal script needs to be accessible with tab and enter keys?-->
     <script>
     const modal = document.getElementById("project-modal");
     const modalEmbed = document.getElementById("modal-embed");
@@ -124,7 +134,7 @@ EMAIL: sebasam3@uci.edu
 
     function openModal(item) {
         modalTitle.textContent = item.dataset.title;
-        modalDesc.textContent = item.dataset.description;
+        modalDesc.innerHTML = item.dataset.description;
         modalEmbed.src = item.dataset.embed;
         modal.classList.add("open");
         modal.setAttribute("aria-hidden", "false");

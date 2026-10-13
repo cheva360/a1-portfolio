@@ -10,45 +10,45 @@ Talking to classmates about class material, assignment requirements, etc. is a g
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
-*/10
-- */1 Readme
-- */2 Basic HTML content
-- */1 Basic CSS styling
-- */1 Advanced feature
-- */2 Responsive layout
-- */1 Passes validation checks
-- */2 Embraces spirit of the assignment
+10/10
+- 1/1 Readme
+- 2/2 Basic HTML content
+- 1/1 Basic CSS styling
+- 1/1 Advanced feature
+- 2/2 Responsive layout
+- 1/1 Passes validation checks
+- 2/2 Embraces spirit of the assignment
 
 2. What (a) basic features, (b) CSS features, and (c) advanced features did you include in your portfolio?
 
 (a) Basic features
-
+Semantic tags, images, links, tables, bootstrap responsive design for mobile and pc.
 
 
 (b) CSS features
-
+Custom fonts, colors, drop shadows, hover effects, flex.
 
 
 (c) Advanced features
-
+Modal Popup script, copy email script, videos, layout change on mobile.
 
 
 
 3. Did you ignore any of the warnings or errors presented by the accessibility checker? If so, why does this not seem like an accessibility concern? If it's useful, you can consolidate your thoughts on multiple warnings/errors if the rationale is similar.
-
+My portfolio passed all the validation checks, but it did have a lot of potential accessibility issues presented. To me the one worth noting was the inability to use the modal popup script with a keyboard. I did not have time to implement a solution, but I plan to do so in the future.
 
 
 4. How long, in hours, did it take you to complete this assignment?
-
+5 hours
 
 
 5. What online resources did you consult when completing this assignment? (list specific URLs, describe queries to Generative AI, or use of AI-based code completion)
-
-
+W3 Schools, Stack Overflow, Bootstrap Documentation & Youtube Tutorial, AI queries for unexpected behaviour/debugging.
+References: https://andreacolosiosound.com/en/works/#942394644 https://aksfxmusic.com/ https://www.lindenreid.com/portfolio
 
 6. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
-
+Khang Vu & Zoya McDonnell
 
 
 7. Is there anything special we need to know in order to run your code?
-
+No
