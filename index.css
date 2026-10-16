@@ -64,11 +64,16 @@ h1 {
 
 .images img {
     display: block;
-    transition: filter 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
+
 }
 
 .images:hover img {
-    filter: grayscale(50%) brightness(0.5);
+    filter: grayscale(50%) brightness(0.3);
+/*increase size with hover*/
+    margin: -0.5em 0 -0.5em 0;
+    transform: rotate(5deg) scale(1.05);
+
 }
 
 .images::after {
@@ -78,7 +83,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: max-content;
-    max-width: 100%;
+    max-width: 80%;
     text-align: center;
     color: white;
     font-family: "Bpmf Huninn", sans-serif;
